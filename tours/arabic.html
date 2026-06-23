@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <title>فينوس تورز - الصفحة الرئيسية</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style-ar.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="spinner">
+      <div class="spinner-border" role="status"></div>
+    </div>
+    <header>
+      <nav class="navbar">
+        <div class="logo"><img src="img/logo.png" width="90" /></div>
+        <ul class="links">
+          <li><a href="#" class="home active-link">الرئيسية</a></li>
+          <li><a href="#section1">خدماتنا</a></li>
+          <li><a href="about.html">من نحن</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">اختر رحلتك <span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+              <a href="#trip1">رحلات داخلية</a>
+              <a href="#trip2">رحلات دولية</a>
+              <a href="#trip3">حج وعمرة</a>
+            </div>
+          </li>
+          <li><a href="#section3" class="rev">آراء العملاء</a></li>
+        </ul>
+        <a href="index.html" id="arabic-link">English</a>
+      </nav>
+    </header>
+    <main>
+      <div class="video-container">
+        <img src="img/tours.jpg" width="1250" height="600" />
+        <div class="overlay"></div>
+        <div class="content">
+          <h2 id="text-header">
+            <span>V</span><span>e</span><span>n</span><span>u</span><span>s</span>
+            <span>&nbsp;</span>
+            <span>T</span><span>o</span><span>u</span><span>r</span><span>s</span>
+          </h2>
+          <h2 id="text-mirror">
+            <span>V</span><span>e</span><span>n</span><span>u</span><span>s</span>
+            <span>&nbsp;</span>
+            <span>T</span><span>o</span><span>u</span><span>r</span><span>s</span>
+          </h2>
+        </div>
+        <div class="explore-btn-container"><a href="#section2">استكشف خططنا</a></div>
+      </div>
+
+      <div id="section1">
+        <h1>خدماتنا</h1>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><span style="font-size: 35px">✈️</span></div>
+            <h3>حجز الطيران</h3>
+            <p>حجوزات تذاكر طيران لجميع أنحاء العالم بكل سهولة وبأفضل الأسعار التنافسية.</p>
+            <a class="service-link" onclick="openModal('flight')">لمعرفة المزيد ←</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><span style="font-size: 35px">🏨</span></div>
+            <h3>حجز الفنادق</h3>
+            <p>أماكن إقامة مختارة بعناية من الفنادق الفاخرة والاقتصادية لضمان راحتك.</p>
+            <a class="service-link" onclick="openModal('hotel')">لمعرفة المزيد ←</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><span style="font-size: 35px">🗺️</span></div>
+            <h3>البرامج السياحية</h3>
+            <p>خطط مخصصة للرحلات الداخلية، الدولية، ورحلات الحج والعمرة الروحانية.</p>
+            <a class="service-link" onclick="openModal('tour')">لمعرفة المزيد ←</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><span style="font-size: 35px">🚗</span></div>
+            <h3>انتقالات المطار</h3>
+            <p>خدمة توصيل خاصة وموثوقة من وإلى المطار بسيارات حديثة على مدار الساعة.</p>
+            <a class="service-link" onclick="openModal('airport')">لمعرفة المزيد ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-overlay" id="customModal" onclick="closeModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+          <span class="close-modal" onclick="forceClose()">&times;</span>
+          <h2 id="modalTitle">اسم الخدمة</h2>
+          <p id="modalDescription">سيتم تحميل تفاصيل الخدمة ديناميكياً بالعربية.</p>
+          <button class="modal-btn" onclick="alert('شكراً لك! ميزة الحجز ستتوفر قريباً.')">احجز هذه الخدمة الآن</button>
+        </div>
+      </div>
+
+      <div id="section2">
+        <h1 class="plans-title">خطط السفر والرحلات</h1>
+        <div class="plans-container">
+          <div class="plan-card" id="trip1">
+            <div class="plan-badge">الأكثر طلباً</div>
+            <div class="plan-header">
+              <h2>رحلات داخلية</h2>
+              <p>استكشف جمال بلدك</p>
+            </div>
+            <ul class="plan-features">
+              <li><span class="plan-check">✓</span> الغردقة وشرم الشيخ</li>
+              <li><span class="plan-check">✓</span> رحلات نايل كروز الأقصر وأسوان</li>
+              <li><span class="plan-check">✓</span> منتجعات 4 و 5 نجوم شاطئية</li>
+              <li><span class="plan-check">✓</span> جولات تاريخية مع مرشدين</li>
+            </ul>
+            <div class="plan-footer">
+              <button class="plan-btn" onclick="alert('تم إرسال استفسارك عن الرحلات الداخلية!')">عرض الباقات</button>
+            </div>
+          </div>
+          <div class="plan-card" id="trip2">
+            <div class="plan-badge red-badge">أفضل قيمة</div>
+            <div class="plan-header">
+              <h2>رحلات دولية</h2>
+              <p>اكتشف العالم من حولك</p>
+            </div>
+            <ul class="plan-features">
+              <li><span class="plan-check">✓</span> تركيا، تايلاند، وأوروبا</li>
+              <li><span class="plan-check">✓</span> تشمل تذاكر الطيران الذهاب والعودة</li>
+              <li><span class="plan-check">✓</span> إقامة في فنادق فاخرة ومميزة</li>
+              <li><span class="plan-check">✓</span> دعم دولي متواصل 24/7</li>
+            </ul>
+            <div class="plan-footer">
+              <button class="plan-btn" onclick="alert('تم إرسال استفسارك عن الرحلات الدولية!')">استكشف العالم</button>
+            </div>
+          </div>
+          <div class="plan-card" id="trip3">
+            <div class="plan-badge">روحانيات</div>
+            <div class="plan-header">
+              <h2>الحج والعمرة</h2>
+              <p>رحلات إيمانية مباركة</p>
+            </div>
+            <ul class="plan-features">
+              <li><span class="plan-check">✓</span> أقرب الفنادق للحرم الشريف</li>
+              <li><span class="plan-check">✓</span> تخليص كامل التأشيرات والأوراق</li>
+              <li><span class="plan-check">✓</span> مشرفين دينيين متميزين للرحلة</li>
+              <li><span class="plan-check">✓</span> أتوبيسات VIP مكيفة ومريحة</li>
+            </ul>
+            <div class="plan-footer">
+              <button class="plan-btn" onclick="alert('تم إرسال استفسارك عن رحلات الحج والعمرة!')">احجز رحلتك</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="section3">
+        <h1 class="reviews-title">ماذا يقول عملاؤنا</h1>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">👤</div>
+              <div>
+                <h3>أحمد علي</h3>
+                <p class="trip-type">رحلة داخلية (الغردقة)</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "بصراحة، أفضل تجربة سفر عشتها! الفندق في الغردقة كان رائعاً وانتقالات المطار كانت دقيقة جداً في مواعيدها.
+              فريق فينوس احترافي للغاية."
+            </p>
+          </div>
+          <div class="review-card">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">👤</div>
+              <div>
+                <h3>سارة جون</h3>
+                <p class="trip-type">رحلة دولية (تركيا)</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "حجز شهر العسل إلى تركيا عن طريق فينوس تورز كان سهلاً ومريحاً للغاية. من تذاكر الطيران إلى الجولات اليومية
+              المخصصة، كل شيء كان ممتازاً!"
+            </p>
+          </div>
+          <div class="review-card">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">👤</div>
+              <div>
+                <h3>محمد عمر</h3>
+                <p class="trip-type">رحلة عمرة</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "تجربة روحانية لا تُنسى. الفندق كان قريباً جداً من الحرم كما وعدونا بالضبط. والمشرفين كانوا متعاونين طوال
+              فترة المناسك."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-copyright">
+            <p>&copy; 2026 جميع الحقوق محفوظة لشركة <span class="brand-name">فينوس تورز</span>.</p>
+          </div>
+          <div class="footer-portfolio">
+            <p>
+              تم التصميم والتطوير بواسطة
+              <a href="https://ahmedwealsite.netlify.app/" target="_blank" class="portfolio-link">
+                Ahmed|web <span class="arrow-icon">↗</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script>
+      // 1. داتا محتوى النوافذ المنبثقة (Modals) باللغة العربية
+      const serviceData = {
+        flight: {
+          title: "حجز طيران متميز",
+          desc: "نحن نشارك كبرى شركات الطيران العالمية لنقدم لك خيارات حجز مرنة، وتخطيطاً سهلاً لرحلاتك متعددة الوجهات، مع دعم متواصل على مدار الساعة للإلغاء أو تعديل المواعيد."
+        },
+        hotel: {
+          title: "فنادق فاخرة واقتصادية",
+          desc: "استمتع بعروض حصرية على منتجعات الـ 5 نجوم، الفنادق البوتيك المميزة، والإقامات الاقتصادية المريحة في جميع أنحاء العالم، مع خيارات الإفطار المجاني والإلغاء المرن."
+        },
+        tour: {
+          title: "برامج سياحية متكاملة",
+          desc: "اختر من بين رحلاتنا المحلية الاستثنائية، أو باقاتنا الدولية الفاخرة، أو رحلات الحج والعمرة المنظمة والمريحة. كل برنامج يشمل مرشداً محترفاً وانتقالات كاملة."
+        },
+        airport: {
+          title: "انتقالات مطار خاصة",
+          desc: "تجنب طوابير تاكسي المطار! سيكون سائقنا المحترف بانتظارك حاملاً لوحة باسمك الشخصي. نوفر سيارات سيدان فاخرة، ميني فان عائلية، وباصات مجهزة على مدار الساعة."
+        }
+      };
+
+      function openModal(serviceKey) {
+        const modal = document.getElementById("customModal");
+        const title = document.getElementById("modalTitle");
+        const desc = document.getElementById("modalDescription");
+
+        if (serviceData[serviceKey]) {
+          title.innerText = serviceData[serviceKey].title;
+          desc.innerText = serviceData[serviceKey].desc;
+          modal.classList.add("active");
+        }
+      }
+
+      function closeModal(e) {
+        document.getElementById("customModal").classList.remove("active");
+      }
+
+      function forceClose() {
+        document.getElementById("customModal").classList.remove("active");
+      }
+
+      // 2. منطق الـ Scroll Spy المحدث ليعتمد على سكرول نافذة المتصفح الرئيسية (Window Scroll)
+      document.addEventListener("DOMContentLoaded", () => {
+        // إخفاء السبينر فوراً عند التحميل
+        document.getElementById("spinner").style.display = "none";
+
+        const navLinks = document.querySelectorAll(".links a, .dropdown-content a");
+        const section1 = document.getElementById("section1");
+        const section2 = document.getElementById("section2");
+        const section3 = document.getElementById("section3");
+
+        function updateActiveLink() {
+          let currentSection = "home";
+
+          // حساب السكرول بناءً على نافذة المتصفح الحقيقية وليس الـ main
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+          if (scrollTop < 100) {
+            currentSection = "home";
+          } else if (scrollTop >= section3.offsetTop - 350) {
+            currentSection = "rev";
+          } else if (scrollTop >= section2.offsetTop - 350) {
+            currentSection = "section2";
+          } else if (scrollTop >= section1.offsetTop - 350) {
+            currentSection = "section1";
+          } else {
+            currentSection = "home";
+          }
+
+          // تحديث الكلاس النشط للأزرار العلوية
+          document.querySelectorAll(".links a").forEach((link) => {
+            link.classList.remove("active-link");
+            if (link.classList.contains("home")) {
+              link.classList.remove("home");
+            }
+
+            if (
+              (currentSection === "home" && link.innerText.trim() === "الرئيسية") ||
+              (currentSection === "section1" && link.getAttribute("href") === "#section1") ||
+              (currentSection === "section2" && link.classList.contains("dropbtn")) ||
+              (currentSection === "rev" && link.classList.contains("rev"))
+            ) {
+              link.classList.add("active-link");
+            }
+          });
+        }
+
+        // ضبط الانتقال والتحرك بسلاسة مع المتصفح عند الضغط على الأزرار
+        navLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            const targetId = link.getAttribute("href");
+
+            if (!targetId || targetId.startsWith("about") || targetId === "#") {
+              if (link.innerText.trim() === "الرئيسية") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+              return;
+            }
+
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              // حساب الإزاحة بدقة لمنع اختفاء العناوين تحت الـ Navbar الثابتة
+              const navbarHeight = 60;
+              const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+              });
+
+              if (targetId.startsWith("#trip")) {
+                document.querySelectorAll(".plan-card").forEach((card) => card.classList.remove("highlight-trip"));
+                targetElement.classList.add("highlight-trip");
+                setTimeout(() => {
+                  targetElement.classList.remove("highlight-trip");
+                }, 2000);
+              }
+            }
+          });
+        });
+
+        // تشغيل دالة المراقبة مع سكرول المتصفح الرئيسي
+        window.addEventListener("scroll", updateActiveLink);
+        updateActiveLink();
+
+        // كود الـ Spinner والتنقل التلقائي لصفحة الإنجليزي index.html
+        const arabicLink = document.getElementById("arabic-link");
+        const spinner = document.getElementById("spinner");
+        arabicLink.addEventListener("click", (e) => {
+          e.preventDefault();
+          spinner.style.display = "flex";
+          setTimeout(() => {
+            spinner.style.display = "none";
+            window.location.href = "index.html";
+          }, 500);
+        });
+      });
+    </script>
+  </body>
+</html>

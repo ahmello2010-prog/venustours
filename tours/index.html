@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Venustours Main Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      main {
+        position: relative;
+        height: 97vh;
+        overflow-y: auto;
+        padding-top: 50px;
+      }
+      .video-container {
+        position: relative;
+        height: 100vh;
+        border-bottom: 5px solid #cc2d2d;
+        overflow: hidden;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.62);
+        z-index: 0;
+      }
+      /* 🛠️ تعديل ستايل المحتوى ليعود للظهور بوضوح فوق الفيديو 🛠️ */
+      .content {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        color: white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      /* 🛠️ تثبيت زر الاستكشاف وتوسيطه برمجياً ليطابق الأبعاد الأصلية 🛠️ */
+      .explore-btn-container {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        opacity: 0;
+        animation: slideUp 1s ease-out 2s forwards;
+      }
+      .explore-btn-container a {
+        text-decoration: none;
+        box-shadow: -2px -2px rgba(0, 0, 0, 0.5);
+        color: #000;
+        background-color: #db3434;
+        padding: 12px 25px;
+        font-size: 1.5rem;
+        font-family: "Roboto Condensed", sans-serif;
+        border-radius: 5px;
+        display: inline-block;
+      }
+      .explore-btn-container a:hover {
+        color: #fff;
+        background-color: rgb(123, 123, 123);
+      }
+      #section2 {
+        padding: 40px 20px;
+        background-color: #f7f7f7;
+        color: #333;
+        min-height: 50vh;
+      }
+      #spinner {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      /* 🛠️ حماية القائمة المنسدلة وتأكيد ظهورها فوق محتوى الفيديو 🛠️ */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        z-index: 1005;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 180px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1010;
+        border-radius: 5px;
+        top: 100%;
+        left: 0;
+      }
+      .dropdown-content a {
+        color: black !important;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.85rem;
+        font-family: "Merriweather", serif;
+        border-bottom: none !important;
+      }
+      .dropdown-content a:hover {
+        background-color: #db3434 !important;
+        color: white !important;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block !important;
+      }
+      .dropdown:hover .arrow {
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="spinner">
+      <div class="spinner-border" role="status"></div>
+    </div>
+    <header>
+      <nav class="navbar">
+        <div class="logo"><img src="img/logo.png" width="90" /></div>
+        <ul class="links">
+          <li><a href="#" class="home active-link">Home</a></li>
+          <li><a href="#section1">Our Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Choose your trip <span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+              <a href="#trip1">Domestic Trip</a>
+              <a href="#trip2">International Trip</a>
+              <a href="#trip3">Hajj & Umrah Trip</a>
+            </div>
+          </li>
+          <li><a href="#section3" class="rev">Reviews</a></li>
+        </ul>
+        <a href="index2.html" id="arabic-link">Arabic</a>
+      </nav>
+    </header>
+    <main>
+      <div class="video-container">
+        <img src="img/tours.jpg" width="1250" height="600" />
+        <div class="overlay"></div>
+        <div class="content">
+          <h2 id="text-header">
+            <span>V</span><span>e</span><span>n</span><span>u</span><span>s</span>
+            <span>&nbsp;</span>
+            <span>T</span><span>o</span><span>u</span><span>r</span><span>s</span>
+          </h2>
+          <h2 id="text-mirror">
+            <span>V</span><span>e</span><span>n</span><span>u</span><span>s</span>
+            <span>&nbsp;</span>
+            <span>T</span><span>o</span><span>u</span><span>r</span><span>s</span>
+          </h2>
+        </div>
+        <div class="explore-btn-container"><a href="#section2">Explore our plans</a></div>
+      </div>
+
+      <div id="section1">
+        <h1>Our services</h1>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><span style="font-size: 35px">✈️</span></div>
+            <h3>Flight Booking</h3>
+            <p>Effortless worldwide airline ticket reservations at the best competitive rates.</p>
+            <a class="service-link" onclick="openModal('flight')">Learn More →</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><span style="font-size: 35px">🏨</span></div>
+            <h3>Hotel Booking</h3>
+            <p>Handpicked luxury and budget accommodations globally tailored for your comfort.</p>
+            <a class="service-link" onclick="openModal('hotel')">Learn More →</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><span style="font-size: 35px">🗺️</span></div>
+            <h3>Tour Packages</h3>
+            <p>Special plans for Domestic, International, and spiritual Hajj & Umrah trips.</p>
+            <a class="service-link" onclick="openModal('tour')">Learn More →</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><span style="font-size: 35px">🚗</span></div>
+            <h3>Airport Transfers</h3>
+            <p>Reliable and private 24/7 airport pickup and drop-off transport services.</p>
+            <a class="service-link" onclick="openModal('airport')">Learn More →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-overlay" id="customModal" onclick="closeModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+          <span class="close-modal" onclick="forceClose()">&times;</span>
+          <h2 id="modalTitle">Service Title</h2>
+          <p id="modalDescription">Detailed information loads here dynamically.</p>
+          <button class="modal-btn" onclick="alert('Thank you! Booking feature coming soon.')">
+            Book This Service Now
+          </button>
+        </div>
+      </div>
+      <div id="section2">
+        <h1 class="plans-title">Our Travel Plans</h1>
+        <div class="plans-container">
+          <div class="plan-card" id="trip1">
+            <div class="plan-badge">Popular</div>
+            <div class="plan-header">
+              <h2>Domestic Trips</h2>
+              <p>Explore Local Wonders</p>
+            </div>
+            <ul class="plan-features">
+              <li><span class="plan-check">✓</span> Hurghada & Sharm El Sheikh</li>
+              <li><span class="plan-check">✓</span> Luxor & Aswan Nile Cruises</li>
+              <li><span class="plan-check">✓</span> 4-Star & 5-Star Beach Resorts</li>
+              <li><span class="plan-check">✓</span> Guided Historical Tours</li>
+            </ul>
+            <div class="plan-footer">
+              <button class="plan-btn" onclick="alert('Inquiry sent for Domestic Trips!')">View Packages</button>
+            </div>
+          </div>
+          <div class="plan-card" id="trip2">
+            <div class="plan-badge red-badge">Best Value</div>
+            <div class="plan-header">
+              <h2>International Trips</h2>
+              <p>Discover the World</p>
+            </div>
+            <ul class="plan-features">
+              <li><span class="plan-check">✓</span> Turkey, Thailand & Europe</li>
+              <li><span class="plan-check">✓</span> Flight Tickets Included</li>
+              <li><span class="plan-check">✓</span> Luxury Hotel Accommodation</li>
+              <li><span class="plan-check">✓</span> 24/7 International Support</li>
+            </ul>
+            <div class="plan-footer">
+              <button class="plan-btn" onclick="alert('Inquiry sent for International Trips!')">Explore World</button>
+            </div>
+          </div>
+          <div class="plan-card" id="trip3">
+            <div class="plan-badge">Spiritual</div>
+            <div class="plan-header">
+              <h2>Hajj & Umrah</h2>
+              <p>Sacred Spiritual Journeys</p>
+            </div>
+            <ul class="plan-features">
+              <li><span class="plan-check">✓</span> Closest Hotels to El Haram</li>
+              <li><span class="plan-check">✓</span> Full Visa & Paper Processing</li>
+              <li><span class="plan-check">✓</span> Professional Religious Guides</li>
+              <li><span class="plan-check">✓</span> VIP Air-Conditioned Busses</li>
+            </ul>
+            <div class="plan-footer">
+              <button class="plan-btn" onclick="alert('Inquiry sent for Hajj & Umrah!')">Book Journey</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="section3">
+        <h1 class="reviews-title">What Our Clients Say</h1>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">👤</div>
+              <div>
+                <h3>Ahmed Ali</h3>
+                <p class="trip-type">Domestic Trip (Hurghada)</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "Honestly, the best travel experience ever! The hotel in Hurghada was stunning and the airport transfer
+              was right on time. Venus Tours team is highly professional."
+            </p>
+          </div>
+          <div class="review-card">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">👤</div>
+              <div>
+                <h3>Sarah John</h3>
+                <p class="trip-type">International Trip (Turkey)</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "Booking our honeymoon to Turkey through Venus Tours was effortless. From flight tickets to tailored daily
+              tours, everything was perfectly organized. Highly recommend!"
+            </p>
+          </div>
+          <div class="review-card">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">👤</div>
+              <div>
+                <h3>Mohamed Omar</h3>
+                <p class="trip-type">Umrah Journey</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "An unforgettable spiritual experience. The hotel was incredibly close to El Haram just as promised. The
+              religious guides were supportive throughout the whole trip."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-copyright">
+            <p>&copy; 2026 <span class="brand-name">Venus Tours</span>. All Rights Reserved.</p>
+          </div>
+          <div class="footer-portfolio">
+            <p>
+              Designed & Developed by
+              <a href="https://ahmedwealsite.netlify.app/" target="_blank" class="portfolio-link">
+                Ahmed|web <span class="arrow-icon">↗</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script>
+      const serviceData = {
+        flight: {
+          title: "Premium Flight Booking",
+          desc: "We partner with major international airlines to provide you with flexible booking options, easy multi-city planning, and 24/7 assistance for cancellations or rescheduling."
+        },
+        hotel: {
+          title: "Luxury & Budget Hotels",
+          desc: "Enjoy exclusive deals on 5-star resorts, cozy boutique hotels, and budget-friendly stays worldwide, complete with complimentary breakfast options and flexible cancellation policies."
+        },
+        tour: {
+          title: "Tailored Tour Packages",
+          desc: "Choose from our exceptional local tours, luxury international packages, or organized Hajj & Umrah excursions. Every package includes a professional guide and full transportation."
+        },
+        airport: {
+          title: "Private Airport Transfers",
+          desc: "Skip the airport taxi lines! Get a professional chauffeur waiting for you with a personalized name sign. Luxury sedans, spacious minivans, and neat buses available around the clock."
+        }
+      };
+
+      function openModal(serviceKey) {
+        const modal = document.getElementById("customModal");
+        const title = document.getElementById("modalTitle");
+        const desc = document.getElementById("modalDescription");
+        if (modal && serviceData[serviceKey]) {
+          title.innerText = serviceData[serviceKey].title;
+          desc.innerText = serviceData[serviceKey].desc;
+          modal.classList.add("active");
+        }
+      }
+
+      function closeModal(e) {
+        const modal = document.getElementById("customModal");
+        if (modal) modal.classList.remove("active");
+      }
+
+      function forceClose() {
+        const modal = document.getElementById("customModal");
+        if (modal) modal.classList.remove("active");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const spinner = document.getElementById("spinner");
+        if (spinner) spinner.style.display = "none";
+
+        const mainElement = document.querySelector("main");
+        const navLinks = document.querySelectorAll(".links a, .dropdown-content a");
+
+        const section1 = document.getElementById("section1");
+        const section2 = document.getElementById("section2");
+        const section3 = document.getElementById("section3");
+
+        function updateActiveLink() {
+          let currentSection = "home";
+          const scrollTop =
+            window.scrollY || (mainElement ? mainElement.scrollTop : 0) || document.documentElement.scrollTop;
+
+          if (scrollTop < 100) {
+            currentSection = "home";
+          } else if (section3 && scrollTop >= section3.offsetTop - 350) {
+            currentSection = "rev";
+          } else if (section2 && scrollTop >= section2.offsetTop - 350) {
+            currentSection = "section2";
+          } else if (section1 && scrollTop >= section1.offsetTop - 350) {
+            currentSection = "section1";
+          }
+
+          document.querySelectorAll(".links a").forEach((link) => {
+            link.classList.remove("active-link");
+            if (link.classList.contains("home")) {
+              link.classList.remove("home");
+            }
+
+            if (
+              (currentSection === "home" && link.innerText.trim() === "Home") ||
+              (currentSection === "section1" && link.getAttribute("href") === "#section1") ||
+              (currentSection === "section2" && link.classList.contains("dropbtn")) ||
+              (currentSection === "rev" && link.classList.contains("rev"))
+            ) {
+              link.classList.add("active-link");
+            }
+          });
+        }
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            const targetId = link.getAttribute("href");
+
+            if (!targetId || targetId.startsWith("about") || targetId === "#") {
+              if (link.innerText.trim() === "Home") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                if (mainElement) mainElement.scrollTo({ top: 0, behavior: "smooth" });
+              }
+              return;
+            }
+
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              const navbarHeight = 60;
+              const targetPosition = targetElement.offsetTop - navbarHeight;
+
+              window.scrollTo({ top: targetPosition, behavior: "smooth" });
+              if (mainElement) mainElement.scrollTo({ top: targetPosition, behavior: "smooth" });
+
+              if (targetId.startsWith("#trip")) {
+                document.querySelectorAll(".plan-card").forEach((card) => card.classList.remove("highlight-trip"));
+                targetElement.classList.add("highlight-trip");
+                setTimeout(() => {
+                  targetElement.classList.remove("highlight-trip");
+                }, 2000);
+              }
+            }
+          });
+        });
+
+        window.addEventListener("scroll", updateActiveLink);
+        if (mainElement) mainElement.addEventListener("scroll", updateActiveLink);
+        updateActiveLink();
+
+        const arabicLink = document.getElementById("arabic-link");
+        if (arabicLink && spinner) {
+          arabicLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            spinner.style.display = "flex";
+            setTimeout(() => {
+              spinner.style.display = "none";
+              window.location.href = "index2.html";
+            }, 500);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
